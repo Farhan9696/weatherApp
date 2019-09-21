@@ -3,7 +3,7 @@ import { functionExpression } from '@babel/types';
 
 const Weather = (props) =>{
     return(
-        <div className="container">
+        <div className="container text-light">
             <div className="cards">
             <h1>{props.city}
             </h1>
@@ -14,6 +14,8 @@ const Weather = (props) =>{
             {minmaxTemp(props.temp_min,props.temp_max)}
 
             <h4 className="py-3">{props.description}</h4>
+            
+    
             </div>
         </div>
     );

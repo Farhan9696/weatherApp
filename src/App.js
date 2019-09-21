@@ -92,14 +92,15 @@ class App extends React.Component {
         celsius: this.calCelsius(response.main.temp),
         temp_max: this.calCelsius(response.main.temp_max),
         temp_min: this.calCelsius(response.main.temp_min),
-        description: response.weather[0].description
+        description: response.weather[0].description,
+        humidity: response.main.humidity
       })
   
       this.get_WeatherIcons(this.weathericon,response.weather[0].id);
       
     }
     else{
-      this.setState({erroe: true});
+      this.setState({error: true});
     }
    
   };
@@ -109,7 +110,7 @@ class App extends React.Component {
       <div className="App">
       <Form loadweather={this.getWeather} error={this.state.error}/>
     <Weather city={this.state.city} country={this.state.country} temp_celsius={this.state.celsius}
-      temp_max={this.state.temp_max} temp_min={this.state.temp_min} description={this.state.description}
+      temp_max={this.state.temp_max} temp_min={this.state.temp_min} description={this.state.description} humidity={this.state.humidity}
       weathericon={this.state.icon}
     />
     </div>
